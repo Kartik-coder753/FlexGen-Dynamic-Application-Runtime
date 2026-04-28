@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer components {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@layer base {
+  body {
+    @apply transition-colors duration-300;
+  }
+  .dark body {
+    @apply bg-[#050508] text-slate-300 antialiased;
+  }
+  .light body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+}
+
+@layer utilities {
+  .bg-immersive-gradient {
+    @apply bg-[radial-gradient(at_top,#ffffff,#f1f5f9)] dark:bg-[radial-gradient(at_top,#0d0d1a,#050508)];
+  }
+  .glass-card {
+    @apply bg-white border-slate-200 shadow-xl backdrop-blur-none 
+           dark:bg-[#12121f] dark:border-white/10 dark:shadow-2xl dark:backdrop-blur-sm rounded-xl;
+  }
+  .neon-blue {
+    @apply shadow-[0_4px_12px_rgba(37,99,235,0.1)] dark:shadow-[0_0_15px_rgba(37,99,235,0.4)];
+  }
+}
+

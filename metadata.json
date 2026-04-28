@@ -1,0 +1,6 @@
+{
+  "name": "FlexGen: Dynamic Application Runtime",
+  "description": "A configuration-driven application engine that dynamically generates UI, APIs, and database structures from JSON definitions. Includes localization, CSV import, and custom authentication.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "appConfigs": {
+      "title": "Application Configuration",
+      "description": "Global settings for the dynamic runtime",
+      "type": "object",
+      "properties": {
+        "appName": { "type": "string" },
+        "theme": { "type": "string" },
+        "localization": { "type": "object" },
+        "navigation": { "type": "array" }
+      },
+      "required": ["appName"]
+    },
+    "dynamicContent": {
+      "title": "Dynamic Content",
+      "description": "Generic container for user-defined entity data",
+      "type": "object",
+      "properties": {
+        "entityType": { "type": "string" },
+        "data": { "type": "object" },
+        "ownerId": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["entityType", "data", "ownerId"]
+    }
+  },
+  "firestore": {
+    "appConfigs": {
+      "schema": "appConfigs",
+      "description": "Storage for application configurations"
+    },
+    "content/{contentId}": {
+      "schema": "dynamicContent",
+      "description": "Universal storage for all dynamic entities"
+    }
+  }
+}

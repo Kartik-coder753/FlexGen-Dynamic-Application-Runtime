@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // SECURITY NOTE: This application uses a custom user-data-only authentication system.
+    // In production, you would use Firebase Auth with standard rules.
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
